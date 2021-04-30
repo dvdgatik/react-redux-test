@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+//React Redux facilita la integracion de redux con componentes de react
 import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
 import Result from './components/results';
 import Details from './components/details';
@@ -21,4 +22,14 @@ const Root = (
 //entry point
 
 ReactDOM.render(Root, document.getElementById('root'));
+
+
+
+
+
+
+
+
+
+
 
