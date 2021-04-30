@@ -6,7 +6,7 @@ const findCurrentItem = (id) => {
 
 	//action
 	return {
-		type,
+		type, //type:type
 		payload: id,
 	}
 
