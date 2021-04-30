@@ -1,17 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import { Provider } from 'react-redux';
+import {BrowserRouter, Route, Redirect, Switch} from 'react-router-dom';
+import Result from './components/results';
+import Details from './components/details';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+//Browser Router
+//it  allows us to have more than one page on the server
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+const Root = (
+	<BrowserRouter>
+		<Switch>
+			<Route path='/results' component={Result}/>
+			<Route path='/details/:itemId' component={Details}/>
+			<Redirect path='/' to='/results'/>
+		</Switch>
+	</BrowserRouter>
+	);
+//entry point
+
+ReactDOM.render(Root, document.getElementById('root'));
+
